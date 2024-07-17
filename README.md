@@ -50,7 +50,7 @@ params = {
 
 - 아래 코드 부분을 수정하여 ASOS 및 날씨마루 기상 자료를 다운로드 하고 싶은 날짜 범위 및 지역을 지정 가능.
 - 기상청 측후소는 [다음](https://data.kma.go.kr/data/grnd/selectAsosRltmList.do?pgmNo=36&openPopup=Y) URL에서 확인 가능.
-- 날씨마루 지점 코드의 경우 다음 방법을 참고하여 확인 가능.
+- 날씨마루 지점 코드의 경우 [다음](https://github.com/EthanSeok/Solar_Radiation_forecast/blob/master/assets/README.md) 방법을 참고하여 확인 가능.
 
 ```
 ## main.py
