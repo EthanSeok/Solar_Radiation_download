@@ -21,7 +21,8 @@
 패키지 설치 방법
 
 ```
-cd radiation_analysis
+git clone https://github.com/EthanSeok/Solar_Radiation_forecast.git
+cd Solar_Radiation_forecast/radiation_analysis
 pip install -r requirements.txt
 ```
 
