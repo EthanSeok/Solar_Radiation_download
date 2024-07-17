@@ -14,7 +14,7 @@
 
 ### 사용법
 
-- google colab과 anaconda3 환경에서 사용가능
+- 파이썬 환경에서 사용가능
 
 <br>
 
