@@ -14,6 +14,19 @@
 
 ### 사용법
 
+- google colab과 anaconda3 환경에서 사용가능
+
+<br>
+
+패키지 설치 방법
+
+```
+cd radiation_analysis
+pip install -r requirements.txt
+```
+
+<br>
+
 코드 구성은 다음과 같음
 
 - [asos_download.py](raduation_analysis/asos_download.py): 기상청 시간별 종관 기상자료(ASOS) 다운로드
@@ -26,7 +39,6 @@
 - 아래 코드 부분을 수정하여 ASOS 및 날씨마루 기상 자료를 다운로드 하고 싶은 날짜 범위 및 지역을 지정 가능.
 - 기상청 측후소는 [다음](https://data.kma.go.kr/data/grnd/selectAsosRltmList.do?pgmNo=36&openPopup=Y) URL에서 확인 가능.
 - 날씨마루 지점 코드의 경우 다음 방법을 참고하여 확인 가능.
-
 
 ```
 ## main.py
