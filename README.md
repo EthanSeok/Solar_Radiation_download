@@ -29,10 +29,22 @@ pip install -r requirements.txt
 
 코드 구성은 다음과 같음
 
-- [asos_download.py](raduation_analysis/asos_download.py): 기상청 시간별 종관 기상자료(ASOS) 다운로드
-- [solar_panel_radiation_download.py](raduation_analysis/solar_panel_radiation_download.py): 날씨마루 당일 및 다음날 예측 광량, 온도, 풍속 자료 다운로드
-- [visualization.py](raduation_analysis/visualization.py): 시각화(scatterplot, lineplot)
-- [main.py](raduation_analysis/main.py): 날짜 지정 및 전체 실행 코드
+- [asos_download.py](https://github.com/EthanSeok/Solar_Radiation_forecast/blob/master/radiation_analysis/asos_download.py): 기상청 시간별 종관 기상자료(ASOS) 다운로드
+- [solar_panel_radiation_download.py](https://github.com/EthanSeok/Solar_Radiation_forecast/blob/master/radiation_analysis/solar_panel_radiation_download.py): 날씨마루 당일 및 다음날 예측 광량, 온도, 풍속 자료 다운로드
+- [visualization.py](https://github.com/EthanSeok/Solar_Radiation_forecast/blob/master/radiation_analysis/visualization.py): 시각화(scatterplot, lineplot)
+- [main.py](https://github.com/EthanSeok/Solar_Radiation_forecast/blob/master/radiation_analysis/main.py): 날짜 지정 및 전체 실행 코드
+
+<br>
+
+- ASOS API를 이용하기 위해서 [공공데이터포털](https://www.data.go.kr/data/15057210/openapi.do)에서 사용 신청후 인증키를 받아야한다.
+- 일반 인증키 (Decoding) 코드를 아래 코드에 붙여 넣는다.
+
+```
+## asos_download.py
+url = "https://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList"
+params = {
+    'serviceKey': '', ## serviceKey의 ''안에 인증키를 붙여넣는다.
+```
 
 <br>
 
