@@ -7,7 +7,7 @@ import solar_panel_radiation_download
 from visualization import visualize_data
 
 
-def filter_and_save(df, reg_cd, date_col, cache_dir, prefix):
+def filter_and_save(df, reg_cd, date_col, cache_dir, prefix, process_asos=True):
     if df is None or df.empty:
         # st.warning(f"{prefix} 데이터가 비어 있습니다.")
         return
@@ -15,7 +15,9 @@ def filter_and_save(df, reg_cd, date_col, cache_dir, prefix):
     df['year_month'] = df[date_col].dt.strftime('%Y_%m')
     for year_month, group in df.groupby('year_month'):
         filename = f"{prefix}_{year_month}_{reg_cd}.csv"
-        group = asos_download.process_asos_data(group)
+        print(group)
+        if process_asos:
+            group = asos_download.process_asos_data(group)
         group.to_csv(os.path.join(cache_dir, filename), index=False, encoding='utf-8-sig')
 
 
@@ -78,8 +80,8 @@ def main():
                                                                                                     'fcstDate') < pd.to_datetime(
                     end_date_str)):
                 today_df, tomorrow_df = solar_panel_radiation_download.process_weather_data(base_dates, reg_cd)
-                filter_and_save(today_df, reg_cd, 'fcstDate', maru_cache_dir, 'today')
-                filter_and_save(tomorrow_df, reg_cd, 'fcstDate', maru_cache_dir, 'tomorrow')
+                filter_and_save(today_df, reg_cd, 'fcstDate', maru_cache_dir, 'today', process_asos=False)
+                filter_and_save(tomorrow_df, reg_cd, 'fcstDate', maru_cache_dir, 'tomorrow', process_asos=False)
 
             st.write("Today 예측 자료")
             if today_df is not None:
