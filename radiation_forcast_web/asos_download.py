@@ -87,8 +87,8 @@ def cache_to_final(region_code, cache_dir, output_dir):
 
     if all_data:
         final_df = pd.concat(all_data, ignore_index=True)
-        final_filename = os.path.join(output_dir, f"weather_data_{region_code}.csv")
-        final_df.to_csv(final_filename, index=False, encoding='utf-8-sig')
+        # final_filename = os.path.join(output_dir, f"weather_data_{region_code}.csv")
+        # final_df.to_csv(final_filename, index=False, encoding='utf-8-sig')
         # st.write(f"Saved final data: {final_filename}")
     else:
         st.write("No cached data to concatenate.")
