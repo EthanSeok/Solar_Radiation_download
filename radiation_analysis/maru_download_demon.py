@@ -28,16 +28,6 @@ def main():
         site = reg[reg['번호'] == reg_cd]['지역명'].values[0]
         for date in tqdm(base_dates):
             try:
-                year = date[:4]
-                month = date[4:6]
-                day = date[6:8]
-
-                today_file = os.path.join(output_dir, 'today', reg_cd, year, f"{month}.csv")
-                tomorrow_file = os.path.join(output_dir, 'tomorrow', reg_cd, year, f"{month}.csv")
-
-                if os.path.exists(today_file) and os.path.exists(tomorrow_file):
-                    continue
-
                 today_df, tomorrow_df = solar_panel_radiation_download.process_weather_data(date, reg_cd, site)
 
                 if not today_df.empty:
