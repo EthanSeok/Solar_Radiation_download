@@ -21,7 +21,7 @@ def fetch_weather_data(start_date, end_date, stn_ids):
 
     url = "https://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList"
     params = {
-        'serviceKey': 'NUWyH1Kqtd0zBtafgGKfLZdKrkgPFsnd+xCWP3z1mL+MksCGA08gjaNn0Kd2qUrnvtWE8VYexjpnZYAKTUtk0g==',
+        'serviceKey': '',
         'numOfRows': '720',
         'pageNo': 1,
         'dataType': 'JSON',
